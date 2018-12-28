@@ -1,6 +1,4 @@
-theme: jekyll-theme-cayman
-
-google_analytics: UA-131464362-1
-
 title: Chris Lawson
 description: A Personal Website
+google_analytics: UA-131464362-1
+theme: jekyll-theme-cayman
