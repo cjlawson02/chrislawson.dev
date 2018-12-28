@@ -10,6 +10,9 @@
         gtag('config', '{{ site.google_analytics }}');
       </script>
     {% endif %}
+    {% if site.google_search_console %}
+      <meta name="google-site-verification" content="{{ site.google_search_console }}" />
+    {% endif %}
     <meta charset="UTF-8">
 
 {% seo %}
