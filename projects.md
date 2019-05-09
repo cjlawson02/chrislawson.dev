@@ -5,9 +5,11 @@ permalink: /projects.html
 
 ## Projects
 
+Here are a collection of projects I work on.
+
 ### FRC Team 973: The Greybots
 
-I am a programmer for Atascadero High School's premier robotics [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team.
+I am a programmer for Atascadero High School's premier robotics [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team...
 
 #### Greybots Signin
 
@@ -25,13 +27,26 @@ Our [2018 Robot: Havoc](https://github.com/Team973/2018-inseason) was a quarterf
 
 Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Houston World Chamiponship Winner. I programmed and tuned many parts of the robot, but mostly taught new programming students C++.
 
-### LifeGuard CPR and Aquatics
+---
+
+### Professional Website Development
+
+I work on professional website development for companies in my community.
+
+#### LifeGuard CPR and Aquatics
 
 I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
 
+
+#### Architectual Iron Works
+
+I am a web developer for [Architectual Iron Works](https://aiwslo.com). I am currently working on a redesign for a better UI/UX that will hopefully lead to better user retention and higher sales.
+
+---
+
 ### Miscellaneous DIY Projects
 
-Here are a few of my DIY projects I have built.
+Here are a few of my DIY projects I have worked on...
 
 #### ChickenPotPi
 
