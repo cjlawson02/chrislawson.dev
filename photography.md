@@ -5,12 +5,16 @@ permalink: /photography.html
 
 ## Photography
 
+I do headshots and photography for events on the side. Email me at [photos@chris2fourlaw.me](mailto:photos@chris2fourlaw.me) if you are interested!
+
+
 My current setup:
 - Canon EOS Rebel T6
     - 18-55mm, 50mm, 75-300mm
 - GoPro Hero 3
 - GoPro Hero 5
 - iPhone XR
+
 
 <div class='parent' style='display: flex;'>
 <div class='child' style='flex: 1;'>
