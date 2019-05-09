@@ -9,15 +9,15 @@ Here are a collection of projects I work on.
 
 ### FRC Team 973: The Greybots
 
-I am a programmer for Atascadero High School's premier robotics [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team...
+I am a programmer for Atascadero High School's premier robotics team, [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team...
 
 #### Greybots Signin
 
-[Greybots Signin](https://github.com/Team973/greybots-signin) is a custom built clock in/clock out system for tracking student attendance at robotics meets. Built using HTML and JavaScript. Uses [Google Sheets](https://sheets.google.com) to store student data.
+[Greybots Signin](https://github.com/Team973/greybots-signin) is a custom-built clock in/clock out system for tracking student attendance at robotics meets. It is a webapp that uses [Google Sheets](https://sheets.google.com) to store student data.
 
 #### GreyDash
 
-GreyDash is a custom dashboard for debugging, camera viewing, retrieving and sending data to the robot, and much more. It features [Smoothie Charts](http://smoothiecharts.org), a JavaScript graphing utility which makes it extremely useful for tuning [closed-loop PID systems](https://en.wikipedia.org/wiki/PID_controller) that we use for automated movements.
+GreyDash is a custom-built dashboard for debugging, camera viewing, streaming data to and from the robot, and much more. It features [Smoothie Charts](http://smoothiecharts.org), a JavaScript graphing utility which makes it extremely useful for tuning [closed-loop PID systems](https://en.wikipedia.org/wiki/PID_controller) that we use for automated movements.
 
 #### 2018 Robot Code
 
@@ -25,7 +25,7 @@ Our [2018 Robot: Havoc](https://github.com/Team973/2018-inseason) was a quarterf
 
 #### 2019 Robot Code
 
-Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Houston World Chamiponship Winner. I programmed and tuned many parts of the robot, but mostly taught new programming students C++.
+Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Houston World Chamiponship Winner, as well as a two time winner of the Autonomous Programming Award. I programmed and tuned many parts of the robot, but mostly taught new programming students C++.
 
 ---
 
