@@ -37,11 +37,6 @@ I work on professional website development for companies in my community.
 
 I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
 
-
-#### Architectual Iron Works
-
-I am a web developer for [Architectual Iron Works](https://aiwslo.com). I am currently working on a redesign for a better UI/UX that will hopefully lead to better user retention and higher sales.
-
 ---
 
 ### Miscellaneous DIY Projects
