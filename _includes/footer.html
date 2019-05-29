@@ -1,19 +1,24 @@
-<footer class="site-footer">
-  <span class="site-footer-credits">&copy 2019 Chris Lawson.</span>
+<footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <span>&copy 2019 Chris Lawson.</span>
+  </div>
+  <div class="mdl-mini-footer__right-section">
+    <ul class="mdl-mini-footer__link-list">
+      {% if site.github_username %}
+      <li>
+        <a href="https://github.com/{{ site.github_username }}">
+          <i class="fa fa-github"></i> GitHub
+        </a>
+      </li>
+      {% endif %}
+      
+      {% if site.instagram_username %}
+      <li>
+        <a href="https://www.instagram.com/{{ site.instagram_username }}">
+          <i class="fa fa-instagram"></i> Instagram
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
 </footer>
-
-{% if site.github_username %}
-<li>
-  <a href="https://github.com/{{ site.github_username }}">
-    <i class="fa fa-github"></i> GitHub
-  </a>
-</li>
-{% endif %}
-
-{% if site.instagram_username %}
-<li>
-  <a href="https://www.instagram.com/{{ site.instagram_username }}">
-    <i class="fa fa-instagram"></i> Instagram
-  </a>
-</li>
-{% endif %}
