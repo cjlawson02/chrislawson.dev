@@ -6,3 +6,7 @@ theme: jekyll-theme-cayman
 url: "https://chris2fourlaw.me"
 plugins:
   - jekyll-sitemap
+
+# Social Media
+github_username: Chris2fourlaw
+instagram_username: chris2fourlaw
