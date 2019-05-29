@@ -1,9 +1,8 @@
 ---
 layout: default
 permalink: /resume.html
+title: Résumé
 ---
-
-## Résumé
 
 Here is a copy of my résumé.
 

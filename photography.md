@@ -1,9 +1,8 @@
 ---
 layout: default
 permalink: /photography.html
+title: Photography
 ---
-
-## Photography
 
 I do headshots and photography for events on the side. Email me at [photos@chris2fourlaw.me](mailto:photos@chris2fourlaw.me) if you are interested!
 

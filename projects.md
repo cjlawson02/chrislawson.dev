@@ -1,9 +1,8 @@
 ---
 layout: default
 permalink: /projects.html
+title: Projects
 ---
-
-## Projects
 
 Here are a collection of projects I work on.
 
