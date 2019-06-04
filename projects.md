@@ -45,4 +45,3 @@ Here are a few of my DIY projects I have worked on...
 #### ChickenPotPi
 
 [ChickenPotPi](https://github.com/Chris2fourlaw/ChickenPotPi) is a Python GPIO application that runs on a [Raspberry Pi](https://www.raspberrypi.org) for opening and closing a motorized chicken coop door on a certain schedule. It is controlled using a web interface hosted on the RPi and is accessible on the internet.
-
