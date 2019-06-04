@@ -6,6 +6,7 @@ description: Atascadero High School student with plans to study Computer Enginee
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chris2fourlaw.me # the base hostname & protocol for your site
 author: Chris Lawson
+google_analytics: UA-131464362-1
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
@@ -28,3 +29,6 @@ markdown: kramdown
 
 sass:
   style: compressed
+
+plugins:
+  - jekyll-sitemap
