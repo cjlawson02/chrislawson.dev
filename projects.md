@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+image: assets/images/projects.jpg
 nav-menu: true
 ---
 

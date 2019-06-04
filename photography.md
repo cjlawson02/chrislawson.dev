@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Photography
-image: assets/images/pic11.jpg
+image: assets/images/photography.jpg
 nav-menu: true
 ---
 
