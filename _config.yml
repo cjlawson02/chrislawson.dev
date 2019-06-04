@@ -6,12 +6,6 @@ description: Description
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: https://chris2fourlaw.me # the base hostname & protocol for your site
 author: Chris Lawson
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
-zip_code: 55555
-country: United States of America
-phone: (716) 555-5555
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
@@ -20,7 +14,7 @@ tiles-count: 6
 # social settings
 500px_url:
 facebook_url:
-github_url:
+github_url: https://github.com/Chris2fourlaw
 gitlab_url:
 googleplus_url:
 instagram_url: https://instagram.com/chris2fourlaw
