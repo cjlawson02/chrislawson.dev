@@ -1,7 +1,7 @@
 ---
-layout: default
-permalink: /resume.html
+layout: page
 title: Résumé
+nav-menu: true
 ---
 
 Here is a copy of my résumé.

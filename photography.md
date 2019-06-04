@@ -1,7 +1,8 @@
 ---
-layout: default
-permalink: /photography.html
+layout: page
 title: Photography
+image: assets/images/pic11.jpg
+nav-menu: true
 ---
 
 I do headshots and photography for events on the side. Email me at [photos@chris2fourlaw.me](mailto:photos@chris2fourlaw.me) if you are interested!

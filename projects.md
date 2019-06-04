@@ -1,7 +1,7 @@
 ---
-layout: default
-permalink: /projects.html
+layout: page
 title: Projects
+nav-menu: true
 ---
 
 Here are a collection of projects I work on.
