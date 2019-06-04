@@ -1,9 +1,9 @@
 # site settings
 title: Chris Lawson
-subtitle: Subtitle
+subtitle: Student
 email: contact@chris2fourlaw.me
-description: Description
-baseurl: "/" # the subpath of your site, e.g. /blog
+description:  Atascadero High School student with plans to study Computer Engineering at a 4-year university.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chris2fourlaw.me # the base hostname & protocol for your site
 author: Chris Lawson
 
