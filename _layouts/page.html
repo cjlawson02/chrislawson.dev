@@ -4,9 +4,24 @@
 {% include head.html %}
 
 <body>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-    {% include header.html %} {{ content }} {% include footer.html %}
 
+        {% include header.html %}
+
+        <div id="main">
+            <div class="inner">
+                <header class="major">
+                    <h2>{{ page.title }}</h2>
+                </header>
+                <p>{{ content }}</p>
+            </div>
+        </div>
+
+        {% include footer.html %}
+
+    </div>
 </body>
 
 </html>

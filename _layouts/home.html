@@ -4,44 +4,47 @@
 {% include head.html %}
 
 <body>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-    {% include header.html %}
+        {% include header.html %}
 
-    <!-- Banner -->
-    <section id="banner" class="major">
-        <div class="inner">
-            <header class="major">
-                <h1>{{ page.landing-title }}</h1>
-            </header>
-            <div class="content">
-                <p style="text-transform: uppercase;">{{ site.description }}</p>
-                <ul class="actions">
-                    <li><a href="#one" class="button next scrolly">Get Started</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- One -->
-        {% include tiles.html %}
-
-        <!-- Two -->
-        <section id="two">
+        <!-- Banner -->
+        <section id="banner" class="major">
             <div class="inner">
                 <header class="major">
-                    <h2>{{ page.title }}</h2>
+                    <h1>{{ page.landing-title }}</h1>
                 </header>
-                <p>{{ content }}</p>
+                <div class="content">
+                    <p style="text-transform: uppercase;">{{ site.description }}</p>
+                    <ul class="actions">
+                        <li><a href="#one" class="button next scrolly">Get Started</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
 
+        <!-- Main -->
+        <div id="main">
+
+            <!-- One -->
+            {% include tiles.html %}
+
+            <!-- Two -->
+            <section id="two">
+                <div class="inner">
+                    <header class="major">
+                        <h2>{{ page.title }}</h2>
+                    </header>
+                    <p>{{ content }}</p>
+                </div>
+            </section>
+
+        </div>
+
+        {% include footer.html %}
+
     </div>
-
-    {% include footer.html %}
-
 </body>
 
 </html>

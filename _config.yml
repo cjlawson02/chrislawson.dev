@@ -1,7 +1,6 @@
 # site settings
 title: Chris Lawson
 subtitle: Student
-email: contact@chris2fourlaw.me
 description: Atascadero High School student with plans to study Computer Engineering at a 4-year university.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chris2fourlaw.me # the base hostname & protocol for your site
@@ -13,16 +12,12 @@ tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 6
 
 # social settings
-500px_url:
-facebook_url:
+email: contact@chris2fourlaw.me
+facebook_url: https://www.facebook.com/chris.lawson.75839923
 github_url: https://github.com/Chris2fourlaw
-gitlab_url:
-googleplus_url:
 instagram_url: https://www.instagram.com/chris2fourlaw
-linkedin_url: https://www.linkedin.com/in/andrew-banchich-a4ba1195
-pinterest_url:
-slack_url:
-twitter_url:
+linkedin_url: https://www.linkedin.com/in/christopher-lawson-746265182/
+spotify_url: https://open.spotify.com/user/chris2fourlaw
 
 # build settings
 markdown: kramdown
