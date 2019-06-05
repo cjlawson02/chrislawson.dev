@@ -9,7 +9,6 @@ google_analytics: UA-131464362-1
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
 
 # social settings
 email: contact@chris2fourlaw.me
