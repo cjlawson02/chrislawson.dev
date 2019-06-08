@@ -6,4 +6,19 @@ nav-menu: true
 
 Here is a copy of my résumé.
 
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vR5B-M9stT4jtiKrV_i4e1ZJuaQZ9PTJUXmFbNmUU-AgHy-nP38dGJbgoxu9sTK-Ihk4oX7c43PJ85V/pub?embedded=true" width="70%" height="1000px"></iframe>
+<div style="width: 80%; height: 100vh;">
+    <object
+        data="/assets/pdfs/WebsiteResume.pdf"
+        type="application/pdf"
+        width="100%"
+        height="100%">
+        <iframe
+            src="/assets/pdfs/WebsiteResume.pdf"
+            width="100%"
+            height="100%"
+            style="border: none;">
+            <p>Your browser does not support PDFs.
+                <a href="/assets/pdfs/WebsiteResume.pdf">Download the PDF</a>.</p>
+        </iframe>
+    </object>
+</div>

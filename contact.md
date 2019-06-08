@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 nav-menu: true
+show-tile: false
 ---
 
 

@@ -43,6 +43,14 @@ I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a
 
 Here are a few of my DIY projects I have worked on...
 
+#### Family NAS
+
+I built a custom 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) for my house that runs 24/7 to backup all the computers my family owns. It runs on [FreeNAS](https://freenas.org) and hardware specs can be found [here](https://pcpartpicker.com/list/qDpLbX).
+
+#### Personal PC
+
+I built my personal desktop for programming in addition to gaming. Full hardware specs can be found [here](https://pcpartpicker.com/list/qZLLMZ).
+
 #### ChickenPotPi
 
 [ChickenPotPi](https://github.com/Chris2fourlaw/ChickenPotPi) is a Python GPIO application that runs on a [Raspberry Pi](https://www.raspberrypi.org) for opening and closing a motorized chicken coop door on a certain schedule. It is controlled using a web interface hosted on the RPi and is accessible on the internet.
