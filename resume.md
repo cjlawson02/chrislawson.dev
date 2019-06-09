@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Résumé
+description: My personal résumé for download
 nav-menu: true
 ---
 

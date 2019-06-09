@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+description: A look at my current projects as well as completed ones
 image: assets/images/projects.jpg
 nav-menu: true
 ---

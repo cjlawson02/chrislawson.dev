@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Photography
+description: Details about my photography hobby
 image: assets/images/photography.jpg
 nav-menu: true
 ---
