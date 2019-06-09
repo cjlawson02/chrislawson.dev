@@ -9,7 +9,7 @@ I am a senior at Atascadero High School. After I graduate, I will attend a 4-yea
 
 ### Why Chris2fourlaw?
 
-My username on pretty much everything is Chris2fourlaw. When I started messing around with computers, my Dad helped me come up with this username.
+My username on pretty much everything is Chris2fourlaw. I derive it from my full name.
 
 <img src="/assets/images/Chris2fourlaw.png">
 
