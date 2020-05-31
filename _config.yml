@@ -1,7 +1,7 @@
 # site settings
 title: Chris Lawson
 subtitle: Computer Engineering Student at Cal Poly SLO
-description: Atascadero High School student with plans to study Computer Engineering at a Cal Poly SLO.
+description: Atascadero High School student with plans to study Computer Engineering at Cal Poly SLO.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chris2fourlaw.me # the base hostname & protocol for your site
 author: Chris Lawson
