@@ -8,6 +8,20 @@ nav-menu: true
 
 Here are a collection of projects I work on.
 
+### Professional Work
+
+Here's a list of my current and past work experience.
+
+#### LifeGuard CPR and Aquatics
+
+I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
+
+#### Wilson Creek Communications
+
+I am a Network Engineer for [Wilson Creek Communications](https://www.wilson-creek.net/) in Atascadero. Wilson Creek specializes in rural internet connectivity through Wi-Fi technology. There, I manage backend servers supporting the network, website, and more as well as getting out in the field to service Access Points and customer equipment.
+
+---
+
 ### FRC Team 973: The Greybots
 
 I am a programmer for Atascadero High School's premier robotics team, [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team...
@@ -27,16 +41,6 @@ Our [2018 Robot: Havoc](https://github.com/Team973/2018-inseason) was a quarterf
 #### 2019 Robot Code
 
 Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Houston World Chamiponship Winner, as well as a two time winner of the Autonomous Programming Award. I programmed and tuned many parts of the robot, but mostly taught new programming students C++.
-
----
-
-### Professional Website Development
-
-I work on professional website development for companies in my community.
-
-#### LifeGuard CPR and Aquatics
-
-I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
 
 ---
 
