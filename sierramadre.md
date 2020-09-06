@@ -6,7 +6,7 @@ show-tile: false
 sitemap: false
 ---
 
-<video autoplay muted playsinline class="video-background">
+<video autoplay loop muted playsinline width="500px">
   <source src="/assets/videos/rickroll.mp4" type="video/mp4">
 </video>
 
