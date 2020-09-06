@@ -6,7 +6,9 @@ show-tile: false
 sitemap: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?controls=0;autoplay=1;start=0" frameborder="0" allow="accelerometer; autoplay; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video autoplay muted playsinline class="video-background">
+  <source src="/assets/videos/rickroll.mp4" type="video/mp4">
+</video>
 
 ### Hey floormates!
 
