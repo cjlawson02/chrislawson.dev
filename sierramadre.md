@@ -6,13 +6,13 @@ show-tile: false
 sitemap: false
 ---
 
-<video autoplay loop muted playsinline width="500px">
+<video autoplay loop muted playsinline width="50%">
   <source src="/assets/videos/rickroll.mp4" type="video/mp4">
 </video>
 
 ### Hey floormates!
 
-<img src="/assets/images/selfie.jpg" width="20%"/>
+<img src="/assets/images/selfie.jpg" width="30%"/>
 
 I'm Chris Lawson, a computer engineering major in room 33C! I am from Atascadero which is about 15 min north of SLO. Let me know if you ever want help finding cool spots or things to do around SLO! Always down for an adventure
 
