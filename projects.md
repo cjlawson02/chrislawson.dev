@@ -12,19 +12,23 @@ Here are a collection of projects I work on.
 
 Here's a list of my current and past work experience.
 
-#### LifeGuard CPR and Aquatics
+#### PolySat
 
-I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
+I am a programming member of the PolySat team at Cal Poly. I work on various projects such as system boards and server management for [CubeSat](https://www.cubesat.org) projects.
 
 #### Wilson Creek Communications
 
-I am a Network Engineer for [Wilson Creek Communications](https://www.wilson-creek.net/) in Atascadero. Wilson Creek specializes in rural internet connectivity through Wi-Fi technology. There, I manage backend servers supporting the network, website, and more as well as getting out in the field to service Access Points and customer equipment.
+I was a Network Engineer for [Wilson Creek Communications](https://www.wilson-creek.net/) in Atascadero. Wilson Creek specializes in rural internet connectivity through Wi-Fi technology. There, I managed backend servers supporting the network, website, and more as well as getting out in the field to service Access Points and customer equipment.
+
+#### LifeGuard CPR and Aquatics
+
+I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
 
 ---
 
 ### FRC Team 973: The Greybots
 
-I am a programmer for Atascadero High School's premier robotics team, [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team...
+I am an alumni programmer of Atascadero High School's premier robotics team, [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team...
 
 #### Greybots Signin
 
@@ -56,6 +60,6 @@ I built a custom 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storag
 
 I built my personal desktop for programming in addition to gaming. Full hardware specs can be found [here](https://pcpartpicker.com/list/qZLLMZ).
 
-#### ChickenPotPi
+#### ChickenDoor
 
-[ChickenPotPi](https://github.com/Chris2fourlaw/ChickenPotPi) is a Python GPIO application that runs on a [Raspberry Pi](https://www.raspberrypi.org) for opening and closing a motorized chicken coop door on a certain schedule. It is controlled using a web interface hosted on the RPi and is accessible on the internet.
+[ChickenDoor](https://github.com/Chris2fourlaw/ChickenDoor) is a Arduino and Python GPIO application that runs on an [Arduino](https://www.arduino.cc) in conjunction with a [Raspberry Pi](https://www.raspberrypi.org) for opening and closing a motorized chicken coop door on a certain schedule. It is controlled using a web interface hosted on the RPi which communicates commands to the Arduino over I2C.
