@@ -3,7 +3,7 @@ title: Chris Lawson
 subtitle: Computer Engineering Undergrad at Cal Poly SLO
 description: Cal Poly SLO Undergrad studying Computer Engineering. Class of 2024.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://chris2fourlaw.me # the base hostname & protocol for your site
+url: https://chrislawson.dev # the base hostname & protocol for your site
 author: Chris Lawson
 google_analytics: UA-131464362-1
 
@@ -11,7 +11,7 @@ google_analytics: UA-131464362-1
 tiles-source: pages # accepts "posts" or "pages"
 
 # social settings
-email: contact@chris2fourlaw.me
+email: contact@chrislawson.dev
 facebook_url: https://www.facebook.com/chris.lawson.75839923
 instagram_url: https://www.instagram.com/chris2fourlaw
 snapchat_url: https://www.snapchat.com/add/chris2fourlaw
