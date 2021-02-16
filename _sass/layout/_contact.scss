@@ -15,7 +15,7 @@
 			padding: 0 !important;
 
 			> :nth-child(2n - 1) {
-				@include padding(4em, 0, (0, 3em, 0, 0));
+				@include padding(0em, 0, (0, 3em, 0, 0));
 				border-right: solid 1px _palette(border);
 				width: 60%;
 				z-index: 1;
@@ -30,7 +30,7 @@
 				padding: 0;
 
 				> * {
-					@include padding(3em, 0, (0, 0, 0, 3em));
+					@include padding(0em, 0, (0, 0, 0, 3em));
 					position: relative;
 
 					&:before {

@@ -5,8 +5,8 @@ nav-menu: true
 show-tile: false
 ---
 
+Fill out the form below or use the email listed to get in touch!
 
-<!-- Contact -->
 <section id="contact">
     <div class="inner">
         <section>
