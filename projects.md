@@ -54,11 +54,11 @@ Here are a few of my DIY projects I have worked on...
 
 #### Family NAS
 
-I built a custom 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) for my house that runs 24/7 to backup all the computers my family owns. It runs on [FreeNAS](https://freenas.org) and hardware specs can be found [here](https://pcpartpicker.com/list/qDpLbX).
+I built a custom 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) for my house that runs 24/7 to backup all the computers my family owns. It runs on [FreeNAS](https://freenas.org) and hardware specs can be found [here](https://pcpartpicker.com/list/G96XRk).
 
 #### Personal PC
 
-I built my personal desktop for programming in addition to gaming. Full hardware specs can be found [here](https://pcpartpicker.com/list/qZLLMZ).
+I built my personal desktop for programming in addition to gaming. Full hardware specs can be found [here](https://pcpartpicker.com/list/mxDdFG).
 
 #### ChickenDoor
 
