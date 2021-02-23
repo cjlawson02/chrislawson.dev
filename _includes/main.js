@@ -183,7 +183,7 @@
 							// Redirect.
 								window.setTimeout(function() {
 
-									if ($link.attr('ref') == 'noopener noreferrer')
+									if ($link.attr('rel') == 'noopener noreferrer')
 										window.open(href);
 									else
 										location.href = href;

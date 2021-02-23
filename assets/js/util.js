@@ -151,7 +151,7 @@
 
 							var $a = $(this),
 								href = $a.attr('href'),
-								target = $a.attr('target');
+								ref = $a.attr('ref');
 
 							if (!href || href == '#' || href == '' || href == '#' + id)
 								return;
@@ -166,7 +166,7 @@
 							// Redirect to href.
 								window.setTimeout(function() {
 
-									if (target == '_blank')
+									if (ref == 'noopener noreferrer')
 										window.open(href);
 									else
 										window.location.href = href;
