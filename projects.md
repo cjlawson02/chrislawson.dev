@@ -52,9 +52,13 @@ Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Hou
 
 Here are a few of my DIY projects I have worked on...
 
+#### Homelab
+
+I run a homelab from my house in SLO to serve gigabit internet to my roommates, run home automation, host personal webservers, and to experiment with Active Directory and other industry applications. Pictures and diagrams to come.
+
 #### Family NAS
 
-I built a custom 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) for my house that runs 24/7 to backup all the computers my family owns. It runs on [FreeNAS](https://freenas.org) and hardware specs can be found [here](https://pcpartpicker.com/list/G96XRk).
+I built a custom 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) for my house that runs 24/7 to backup all the computers my family owns. It runs on [TrueNAS](https://truenas.org) and hardware specs can be found [here](https://pcpartpicker.com/list/G96XRk).
 
 #### Personal PC
 
