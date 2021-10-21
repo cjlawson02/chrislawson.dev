@@ -10,7 +10,7 @@ Fill out the form below or use the email listed to get in touch!
 <section id="contact">
     <div class="inner">
         <section>
-            <form action="https://formspree.io/{{ site.email }}" method="POST">
+            <form action="https://formspree.io/f/xpzkeldd" method="POST">
                 <div class="field half first">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" />
