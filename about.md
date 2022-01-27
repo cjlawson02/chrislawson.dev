@@ -8,7 +8,7 @@ nav-menu: true
 
 <img src="/assets/images/selfie.jpg" width="20%">
 
-Hey there! I'm a Freshman at Cal Poly SLO studying Computer Engineering.
+Hey there! I'm a second-year at Cal Poly SLO studying Computer Engineering.
 
 ## Hobbies and Interests
 
