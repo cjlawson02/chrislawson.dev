@@ -1,7 +1,7 @@
 # site settings
 title: Chris Lawson
-subtitle: Computer Engineering Undergrad at Cal Poly SLO
-description: Cal Poly SLO Undergrad studying Computer Engineering. Class of 2024.
+subtitle: Jr. Software Developer at Amazon SLO
+description: Jr. Software Developer at Amazon, 2nd Year Cal Poly SLO Undergrad studying Computer Engineering.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chrislawson.dev # the base hostname & protocol for your site
 author: Chris Lawson
