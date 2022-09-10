@@ -266,7 +266,6 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-seo-tag
   jekyll-sitemap
-  nokogiri (~> 1.11.0.rc1)
   tzinfo-data
   webrick (~> 1.7)
 
