@@ -22,7 +22,7 @@ I was a Network Engineer for [Wilson Creek Communications](https://www.wilson-cr
 
 #### LifeGuard CPR and Aquatics
 
-I am the webmaster for [LifeGuard CPR and Aqautics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
+I am the webmaster for [LifeGuard CPR and Aquatics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
 
 ---
 
@@ -44,7 +44,7 @@ Our [2018 Robot: Havoc](https://github.com/Team973/2018-inseason) was a quarterf
 
 #### 2019 Robot Code
 
-Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Houston World Chamiponship Winner, as well as a two time winner of the Autonomous Programming Award. I programmed and tuned many parts of the robot, but mostly taught new programming students C++.
+Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Houston World Championship Winner, as well as a two time winner of the Autonomous Programming Award. I programmed and tuned many parts of the robot, but mostly taught new programming students C++.
 
 ---
 
@@ -54,7 +54,7 @@ Here are a few of my DIY projects I have worked on...
 
 #### Homelab
 
-I run a homelab from my house in SLO to serve gigabit internet to my roommates, run home automation, host personal webservers, and to experiment with Active Directory and other industry applications. Pictures and diagrams to come.
+I run a homelab from my house in SLO to serve gigabit internet to my roommates, run home automation, host personal web servers, and to experiment with Active Directory and other industry applications. Pictures and diagrams to come.
 
 #### Family NAS
 
