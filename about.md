@@ -8,7 +8,7 @@ nav-menu: true
 
 <img src="/assets/images/selfie.jpg" width="20%">
 
-Hey there! I'm a Jr. Software Developer at Amazon SLO and a third-year Computer Science major at Cal Poly.
+Hey there! I'm a Jr. Software Developer at Amazon SLO and a fourth-year Computer Science major at Cal Poly.
 
 ## Hobbies and Interests
 
