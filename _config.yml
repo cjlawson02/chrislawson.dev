@@ -1,7 +1,7 @@
 # site settings
 title: Chris Lawson
 subtitle: Jr. Dev at Amazon
-description: Jr. Software Developer at Amazon, 3rd Year Cal Poly SLO Undergrad studying Computer Science.
+description: Jr. Software Developer at Amazon, 4th year Cal Poly SLO undergrad studying Computer Science.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chrislawson.dev # the base hostname & protocol for your site
 author: Chris Lawson
@@ -11,11 +11,7 @@ google_analytics: UA-131464362-1
 tiles-source: pages # accepts "posts" or "pages"
 
 # social settings
-email: contact@chrislawson.dev
-facebook_url: https://www.facebook.com/chris.lawson.75839923
-instagram_url: https://www.instagram.com/chris2fourlaw
-snapchat_url: https://www.snapchat.com/add/chris2fourlaw
-github_url: https://github.com/Chris2fourlaw
+github_url: https://github.com/cjlawson02
 linkedin_url: https://www.linkedin.com/in/christopher-lawson-746265182/
 spotify_url: https://open.spotify.com/user/chris2fourlaw
 
