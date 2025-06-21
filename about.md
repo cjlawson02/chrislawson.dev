@@ -10,11 +10,9 @@ nav-menu: true
 
 ## Professional Summary
 
-Software Development Engineer at Amazon | Former Co-founder at GreenSight | Computer Science Graduate from Cal Poly, SLO | SysAdmin at CPARC (W6BHZ)
+Software Development Engineer at Amazon | Former Co-founder at GreenSight | Computer Science Graduate from Cal Poly, SLO
 
 At Amazon, I develop a payment reporting and invoicing system that streamlines marketplace earnings management for thousands of global vendors on Prime Video, Amazon Music, Kindle Direct Publishing, Amazon Merch, and more. The system's rebrandable nature has measurably improved operational efficiency for Amazon's businesses worldwide.
-
-My technical foundation began before pursuing Computer Science at Cal Poly. As SysAdmin for Cal Poly Amateur Radio Club (W6BHZ), I maintain critical infrastructure and implement system improvements, combining hands-on technical expertise with practical problem-solving.
 
 The entrepreneurial spirit caught me during my time as co-founder of GreenSight Technologies through the Cal Poly Summer Accelerator program, I led development of an AI-powered ERP for electronics resale. Our solution helped resellers identify and price electronics more accurately, directly impacting their bottom line while reducing electronic waste.
 

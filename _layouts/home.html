@@ -3,10 +3,12 @@
 
 {% include head.html %}
 
-<body>
+<body class="is-preload">
+
     <!-- Wrapper -->
     <div id="wrapper">
 
+        <!-- Header -->
         {% include header.html %}
 
         <!-- Banner -->
@@ -42,9 +44,20 @@
 
         </div>
 
+        <!-- Footer -->
+
         {% include footer.html %}
 
     </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
