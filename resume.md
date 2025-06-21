@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Résumé
-description: My personal résumé for download
+description: View my personal résumé
 nav-menu: true
 ---
 
-Here is a copy of my résumé.
+My résumé outlines my progression from robotics competitions to developing highly-available web services at Amazon. The document below details my technical expertise, project contributions, and professional achievements. For more details, see my [experience page](/projects.html).
 
 <div style="width: 80%; height: 100vh;">
     <object

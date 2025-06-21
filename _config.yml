@@ -1,7 +1,7 @@
 # site settings
 title: Chris Lawson
-subtitle: Jr. Dev at Amazon
-description: Jr. Software Developer at Amazon, 4th year Cal Poly SLO undergrad studying Computer Science.
+subtitle: SDE at Amazon
+description: Software Development Engineer at Amazon, Computer Science graduate from Cal Poly SLO.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://chrislawson.dev # the base hostname & protocol for your site
 author: Chris Lawson

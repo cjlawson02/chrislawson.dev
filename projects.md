@@ -1,42 +1,52 @@
 ---
 layout: page
-title: Projects
-description: A look at my current projects as well as completed ones
+title: Experience
+description: A look at my current and past work experience and projects
 image: assets/images/projects.jpg
 nav-menu: true
 ---
 
-Here are a collection of projects I work on.
+Selected projects demonstrating technical expertise and problem-solving capabilities across professional and academic environments.
 
-### Professional Work
+### Professional Experience
 
-Here's a list of my current and past work experience.
+#### Amazon
 
-#### PolySat
+At Amazon, I work on digital marketplace payment systems that impact millions of vendors worldwide. As a Software Development Engineer I (Sep 2024 – Present), I design and implement scalable microservice architectures, focusing on high-availability payment reporting systems. Previously as a Jr. Software Developer (Dec 2021 – Jun 2024), I contributed to full-stack development using Java, Angular, and React, including creating an AWS Lambda solution for automated vendor invoice notifications.
 
-I am a programming member of the PolySat team at Cal Poly. I work on various projects such as system boards and server management for [CubeSat](https://www.cubesat.org) projects.
+#### GreenSight Tech
+
+As Co-founder & Engineering Lead (Jan 2024 – Sep 2024), I architected an AI-driven multi-tenant ERP system specifically for electronics recyclers and resellers. I led the development of a data-driven platform for electronics identification and pricing, successfully delivering a production-ready beta to three businesses. Technologies included React.js, React Native, and Cloudflare, with significant AI/ML integration.
+
+#### Cal Poly ITS
+
+In my role as Service Desk Lead (Mar 2021 – Dec 2021), I managed campus-wide technical support operations, coordinating incident response through Slack, Confluence, and JIRA. Responsibilities included managing and interviewing student assistants while ensuring efficient service desk operations.
 
 #### Wilson Creek Communications
 
-I was a Network Engineer for [Wilson Creek Communications](https://www.wilson-creek.net/) in Atascadero. Wilson Creek specializes in rural internet connectivity through Wi-Fi technology. There, I managed backend servers supporting the network, website, and more as well as getting out in the field to service Access Points and customer equipment.
+As a Network Engineering Intern (Jul 2019 – Sep 2020), I maintained network infrastructure across 20+ sites and led a significant backend migration to VMware ESXi servers. I developed Python scripts for AP location mapping using Google Earth, optimizing network coverage planning and maintenance workflows.
 
 #### LifeGuard CPR and Aquatics
 
-I am the webmaster for [LifeGuard CPR and Aquatics](https://lifeguardcpr.com), a local Red Cross Certified Safety Trainer. The website is completely designed with Wordpress and features a payment gateway for registering for local lifeguarding classes.
+During my time as webmaster for LifeGuard CPR and Aquatics (no longer in operation), I implemented a WordPress solution with integrated payment processing to streamline class registration and training management.
 
 ---
 
 ### FRC Team 973: The Greybots
 
-I am an alumni programmer of Atascadero High School's premier robotics team, [Team 973 The Greybots](https://greybots.com). Here are some of the projects I work on for the team...
+My journey in robotics began with [Team 973 The Greybots](https://greybots.com), Atascadero High School's championship-winning robotics team. This experience ignited my passion for robotics and software engineering, teaching me invaluable lessons about teamwork, problem-solving under pressure, and how to make tough judgement calls when balancing code reliability and competitive edge.
+
+During my third year of college, I returned to mentor the team, focusing on teaching high school students programming fundamentals and Java development. This role allowed me to develop my technical leadership skills while helping students understand the balance between rapid prototyping and competition-ready code reliability. By implementing fast iteration practices and emphasizing code quality, our team achieved a remarkable 4th place finish at the World Championships, demonstrating the impact of strong technical mentorship on team performance.
+
+Key technical contributions from the full tenure include:
 
 #### Greybots Signin
 
-[Greybots Signin](https://github.com/Team973/greybots-signin) is a custom-built clock in/clock out system for tracking student attendance at robotics meets. It is a webapp that uses [Google Sheets](https://sheets.google.com) to store student data.
+[Greybots Signin](https://github.com/Team973/greybots-signin): I developed a web application integrated with [Google Sheets](https://sheets.google.com) for automated attendance tracking of 20+ students, significantly reducing manual record-keeping time. This was my first real-world experience with web development and API integration.
 
 #### GreyDash
 
-GreyDash is a custom-built dashboard for debugging, camera viewing, streaming data to and from the robot, and much more. It features [Smoothie Charts](http://smoothiecharts.org), a JavaScript graphing utility which makes it extremely useful for tuning [closed-loop PID systems](https://en.wikipedia.org/wiki/PID_controller) that we use for automated movements.
+GreyDash: Engineered a real-time robot monitoring dashboard using [Smoothie Charts](http://smoothiecharts.org) for data visualization and [closed-loop PID system](https://en.wikipedia.org/wiki/PID_controller) tuning. Tool adopted by multiple teams at competitions.
 
 #### 2018 Robot Code
 
@@ -48,22 +58,22 @@ Our [2019 Robot: Fireball](https://github.com/Team973/2019-inseason) was the Hou
 
 ---
 
-### Miscellaneous DIY Projects
+### Personal Projects
 
-Here are a few of my DIY projects I have worked on...
+Self-directed technical implementations demonstrating system design and practical problem-solving capabilities.
 
 #### Homelab
 
-I run a homelab from my house in SLO to serve gigabit internet to my roommates, run home automation, host personal web servers, and to experiment with Active Directory and other industry applications. Pictures and diagrams to come.
+My homelab is my personal playground for experimenting with enterprise-level technologies.  My infrastructure includes multi-gigabit networking, home automation, Active Directory, and containerized applications. It serves as my testing environment for system architecture and network management.
 
 #### Family NAS
 
-I built a custom 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) for my house that runs 24/7 to backup all the computers my family owns. It runs on [TrueNAS](https://truenas.org) and hardware specs can be found [here](https://pcpartpicker.com/list/G96XRk).
+I designed and deployed a 6TB [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) system using [TrueNAS](https://truenas.org) on custom hardware ([specs](https://pcpartpicker.com/list/G96XRk)) for reliable 24/7 family data backup.
 
 #### Personal PC
 
-I built my personal desktop for programming in addition to gaming. Full hardware specs can be found [here](https://pcpartpicker.com/list/mxDdFG).
+I built my personal desktop for programming in addition to gaming. See the full [hardware specs](https://pcpartpicker.com/list/mxDdFG).
 
 #### ChickenDoor
 
-[ChickenDoor](https://github.com/Chris2fourlaw/ChickenDoor) is a Arduino and Python GPIO application that runs on an [Arduino](https://www.arduino.cc) in conjunction with a [Raspberry Pi](https://www.raspberrypi.org) for opening and closing a motorized chicken coop door on a certain schedule. It is controlled using a web interface hosted on the RPi which communicates commands to the Arduino over I2C.
+I developed [automated coop door](https://github.com/Chris2fourlaw/ChickenDoor) system using [Arduino](https://www.arduino.cc) and [Raspberry Pi](https://www.raspberrypi.org). I implemented embedded systems programming, I2C communication, and web interface for monitoring and control.
