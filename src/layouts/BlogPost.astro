@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import BaseLayout from './BaseLayout.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={heroImage}>
+	<main>
+		<article>
+			<header class="post-header">
+				<div class="meta">
+					<FormattedDate date={pubDate} />
+					{
+						updatedDate && (
+							<span class="updated">
+								· Updated <FormattedDate date={updatedDate} />
+							</span>
+						)
+					}
+				</div>
+				<h1>{title}</h1>
+				{
+					tags.length > 0 && (
+						<ul class="tags">
+							{tags.map((tag) => (
+								<li>
+									<span class="tag">{tag}</span>
+								</li>
+							))}
+						</ul>
+					)
+				}
+			</header>
+			{
+				heroImage && (
+					<div class="hero">
+						<Image width={1020} height={510} src={heroImage} alt="" />
+					</div>
+				)
+			}
+			<div class="prose">
+				<slot />
+			</div>
+		</article>
+	</main>
+</BaseLayout>
+<style>
+	.post-header {
+		margin-bottom: 1.75rem;
+	}
+
+	.meta {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.updated {
+		color: var(--text-faint);
+	}
+
+	h1 {
+		margin-bottom: 0.85rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.hero {
+		margin: 0 0 2rem 0;
+	}
+
+	.hero :global(img) {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 6px;
+		border: 1px solid var(--border);
+	}
+
+	.prose {
+		color: var(--text);
+	}
+
+	.prose :global(a) {
+		color: var(--accent);
+	}
+</style>

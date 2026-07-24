@@ -1,0 +1,270 @@
+:root {
+	--navy: #242943;
+	--navy-deep: #1a1f33;
+	--navy-elevated: #2d334f;
+	--accent: #9bf1ff;
+	--accent-strong: #53e3fb;
+	--text: #f4f4ff;
+	--text-muted: rgba(244, 244, 255, 0.65);
+	--text-faint: rgba(244, 244, 255, 0.4);
+	--border: rgba(212, 212, 255, 0.12);
+	--code-bg: rgba(212, 212, 255, 0.06);
+	--measure: 42rem;
+	--measure-wide: 58rem;
+	--page-pad: 1.25rem;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: var(--font-body), 'Source Sans 3', Helvetica, sans-serif;
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.7;
+	letter-spacing: 0.01em;
+	color: var(--text);
+	background:
+		radial-gradient(ellipse 80% 50% at 10% -10%, rgba(155, 241, 255, 0.08), transparent 50%),
+		radial-gradient(ellipse 60% 40% at 100% 0%, rgba(83, 227, 251, 0.06), transparent 45%),
+		linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+	background-attachment: fixed;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	-webkit-font-smoothing: antialiased;
+}
+
+main {
+	width: var(--measure);
+	max-width: calc(100% - 2 * var(--page-pad));
+	margin: 0 auto;
+	padding: 2.5rem var(--page-pad) 4rem;
+}
+
+main.wide {
+	width: var(--measure-wide);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5rem 0;
+	font-family: var(--font-body), 'Source Sans 3', Helvetica, sans-serif;
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+	color: var(--text);
+}
+
+h1 {
+	font-size: clamp(2.25rem, 5vw, 3.25rem);
+	font-weight: 700;
+}
+
+h2 {
+	font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+	font-size: 1.35rem;
+}
+
+h4 {
+	font-size: 1.15rem;
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+a {
+	color: var(--accent);
+	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.12em;
+	text-decoration-skip-ink: auto;
+	transition: color 0.15s ease;
+}
+
+a:hover {
+	color: var(--accent-strong);
+}
+
+a:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+/* Keep inline prose links from picking up awkward layout gaps */
+.prose a {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0 0 1.25em 0;
+}
+
+.prose p {
+	margin-bottom: 1.35em;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+	margin-top: 2em;
+	margin-bottom: 0.65em;
+}
+
+.prose ul,
+.prose ol {
+	margin: 0 0 1.35em 0;
+	padding-left: 1.35em;
+}
+
+.prose li {
+	margin-bottom: 0.4em;
+}
+
+.prose li > ul,
+.prose li > ol {
+	margin-top: 0.35em;
+	margin-bottom: 0.35em;
+}
+
+.prose img {
+	margin: 1.5em 0;
+}
+
+textarea,
+input {
+	font-size: 16px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 1.5em;
+}
+
+th,
+td {
+	border: 1px solid var(--border);
+	padding: 0.5em 0.75em;
+	text-align: left;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+code {
+	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-size: 0.88em;
+	padding: 0.15em 0.4em;
+	background-color: var(--code-bg);
+	border-radius: 3px;
+	border: 1px solid var(--border);
+}
+
+pre {
+	padding: 1.25em 1.35em;
+	border-radius: 6px;
+	background: var(--navy-deep);
+	border: 1px solid var(--border);
+	overflow-x: auto;
+	margin: 0 0 1.5em 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+pre > code {
+	all: unset;
+	font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	font-size: 0.85em;
+	line-height: 1.65;
+}
+
+blockquote {
+	border-left: 3px solid var(--accent);
+	padding: 0.15em 0 0.15em 1.15em;
+	margin: 0 0 1.5em 0;
+	color: var(--text-muted);
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--border);
+	margin: 2.5em 0;
+}
+
+.site-brand {
+	font-weight: 700;
+	letter-spacing: -0.03em;
+}
+
+.muted {
+	color: var(--text-muted);
+}
+
+.tag {
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--accent);
+	border: 1px solid rgba(155, 241, 255, 0.35);
+	padding: 0.15em 0.55em;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.tag:hover {
+	border-color: var(--accent);
+	color: var(--accent-strong);
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 1.05rem;
+	}
+
+	main {
+		padding: 1.75rem var(--page-pad) 3rem;
+	}
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}

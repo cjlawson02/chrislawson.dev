@@ -1,20 +1,37 @@
-## Chris Lawson's Personal Portfolio
+# Chris Lawson — chrislawson.dev
 
-Welcome to the repository for my personal portfolio website! This site serves as a digital workspace where I share my journey as a software engineer, photographer, and technology enthusiast. Built with Jekyll and hosted on GitHub Pages, it's a reflection of both my professional work and personal passions.
+Personal site (Astro + Cloudflare Workers): portfolio pages, writing, and résumé.
 
-### What You'll Find Here
+## Develop
 
-- **Professional Experience**: Details about my role as a Software Development Engineer at Amazon and past experiences
-- **Project Showcases**: From robotics and home automation to enterprise systems
-- **Photography**: Links to my photography portfolio
-- **Technical Blog**: Sharing insights and experiences from my software engineering journey
+```bash
+npm install
+npm run dev
+```
 
-### Technical Details
+Requires Node `>=22.12.0`. Prefer `astro dev --background` in agent workflows.
 
-This site is built using:
-- Jekyll static site generator
-- Custom SCSS styling
-- Responsive design principles
-- GitHub Pages for hosting
+## Build & deploy
 
-Feel free to explore the code and reach out if you have any questions or suggestions!
+```bash
+npm run build
+npm run check    # astro check
+npm run deploy   # astro build && wrangler deploy
+```
+
+GitHub Actions (`.github/workflows/deploy.yml`) runs check, build, smoke tests, then deploys on push to `main`/`master`.
+
+Required repository secrets:
+
+- `CLOUDFLARE_API_TOKEN` — Workers edit permission
+- `CLOUDFLARE_ACCOUNT_ID` — Cloudflare account ID
+
+Also create a GitHub Environment named `production` (workflow references it).
+
+Production serves `chrislawson.dev` as static assets (no Worker script). `workers.dev` and preview URLs are disabled in `wrangler.jsonc`.
+
+Handle `www` → apex with a [Cloudflare Redirect Rule](https://developers.cloudflare.com/rules/url-forwarding/examples/redirect-www-to-root/) (plus a proxied DNS record for `www`). Keep **Always Use HTTPS** on; HSTS is also set in `public/_headers`.
+
+## Content
+
+Blog posts live in `src/content/blog/*.md`. Set `draft: true` to keep a post out of lists, RSS, and routes.

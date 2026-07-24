@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LINKEDIN_URL } from '../consts';
+---
+
+<BaseLayout title="Résumé" description="Résumé PDF — Software Development Engineer II at Amazon.">
+	<main class="wide">
+		<header class="page-header">
+			<h1>Résumé</h1>
+			<p class="muted">
+				One-page overview. For current title and dates, prefer the{' '}
+				<a href="/experience">experience page</a>
+				{' '}or{' '}
+				<a href={LINKEDIN_URL} rel="noopener noreferrer">LinkedIn</a>
+				{' '}— the PDF below may lag a promotion cycle until it’s re-exported.
+			</p>
+			<p>
+				<a href="/pdfs/WebsiteResume.pdf">Download PDF</a>
+			</p>
+		</header>
+
+		<div class="pdf-frame">
+			<iframe src="/pdfs/WebsiteResume.pdf" title="Chris Lawson résumé"></iframe>
+		</div>
+	</main>
+</BaseLayout>
+<style>
+	.page-header {
+		margin-bottom: 1.5rem;
+	}
+
+	.page-header p {
+		max-width: 40rem;
+	}
+
+	.pdf-frame {
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		overflow: hidden;
+		background: var(--navy-elevated);
+		min-height: 75vh;
+	}
+
+	.pdf-frame iframe {
+		display: block;
+		width: 100%;
+		height: 75vh;
+		border: 0;
+	}
+</style>

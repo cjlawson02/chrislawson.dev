@@ -1,0 +1,56 @@
+---
+import { GITHUB_URL, LINKEDIN_URL, SPOTIFY_URL } from '../consts';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<div class="inner">
+		<p class="copy">&copy; {year} Chris Lawson</p>
+		<nav class="links" aria-label="Footer">
+			<a href={GITHUB_URL} rel="noopener noreferrer">GitHub</a>
+			<a href={LINKEDIN_URL} rel="noopener noreferrer">LinkedIn</a>
+			<a href={SPOTIFY_URL} rel="noopener noreferrer">Spotify</a>
+			<a href="/rss.xml">RSS</a>
+		</nav>
+	</div>
+</footer>
+<style>
+	footer {
+		border-top: 1px solid var(--border);
+		padding: 2rem var(--page-pad) 3rem;
+	}
+
+	.inner {
+		width: var(--measure-wide);
+		max-width: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.copy {
+		margin: 0;
+		color: var(--text-faint);
+		font-size: 0.9rem;
+	}
+
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.85rem 1.15rem;
+	}
+
+	.links a {
+		color: var(--text-muted);
+		text-decoration: none;
+		font-size: 0.9rem;
+	}
+
+	.links a:hover {
+		color: var(--accent);
+	}
+</style>

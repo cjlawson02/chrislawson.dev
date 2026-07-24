@@ -1,0 +1,11 @@
+dist
+.astro
+.wrangler
+node_modules
+package-lock.json
+worker-configuration.d.ts
+pnpm-lock.yaml
+yarn.lock
+*.min.js
+*.min.css
+public/**/*.pdf

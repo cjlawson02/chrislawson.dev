@@ -1,0 +1,413 @@
+---
+import { Image } from 'astro:assets';
+import BannerImage from '../assets/images/banner.jpg';
+import FormattedDate from '../components/FormattedDate.astro';
+import {
+	CALPOLY_CSC_URL,
+	GITHUB_URL,
+	LINKEDIN_URL,
+	PHOTOGRAPHY_URL,
+	SITE_DESCRIPTION,
+	SITE_SUBTITLE,
+	SITE_TAGLINE,
+	SITE_TITLE,
+	SPOTIFY_URL,
+} from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedPosts } from '../lib/blog';
+
+const posts = await getPublishedPosts();
+const recent = posts.slice(0, 3);
+
+const siteUrl = Astro.site!.href;
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebSite',
+			'@id': `${siteUrl}#website`,
+			url: siteUrl,
+			name: SITE_TITLE,
+			description: SITE_DESCRIPTION,
+			inLanguage: 'en-US',
+			publisher: { '@id': `${siteUrl}#person` },
+		},
+		{
+			'@type': 'Person',
+			'@id': `${siteUrl}#person`,
+			name: SITE_TITLE,
+			url: siteUrl,
+			description: SITE_DESCRIPTION,
+			jobTitle: 'Software Development Engineer II',
+			worksFor: {
+				'@type': 'Organization',
+				name: 'Amazon',
+			},
+			alumniOf: {
+				'@type': 'CollegeOrUniversity',
+				name: 'California Polytechnic State University, San Luis Obispo',
+				url: CALPOLY_CSC_URL,
+			},
+			sameAs: [GITHUB_URL, LINKEDIN_URL, SPOTIFY_URL, PHOTOGRAPHY_URL],
+		},
+	],
+};
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} image={BannerImage} jsonLd={jsonLd}>
+	<section class="hero">
+		<div class="hero-media" aria-hidden="true">
+			<Image src={BannerImage} alt="" width={1920} height={1080} densities={[1, 1.5, 2]} />
+			<div class="hero-scrim"></div>
+		</div>
+		<div class="hero-copy">
+			<p class="subtitle">{SITE_SUBTITLE}</p>
+			<h1 class="site-brand">{SITE_TITLE}</h1>
+			<p class="lede">{SITE_DESCRIPTION}</p>
+			<p class="tagline muted">{SITE_TAGLINE}</p>
+			<div class="cta">
+				<a class="cta-primary" href="/about">About me</a>
+				<a class="cta-secondary" href="/blog">Blog</a>
+				<a class="cta-secondary" href="/experience">Experience</a>
+			</div>
+		</div>
+	</section>
+
+	<main class="wide home-main">
+		<section class="intro prose">
+			<p>
+				I’m Chris Lawson, a Software Development Engineer II at Amazon SLO focused on building
+				innovative solutions with measurable impact. As a{' '}
+				<a href={CALPOLY_CSC_URL} rel="noopener noreferrer">Cal Poly Computer Science</a>
+				{' '}graduate, I specialize in transforming complex challenges into efficient, elegant
+				solutions.
+			</p>
+			<p>
+				My work spans from developing payment reporting systems at Amazon to building my own homelab
+				and exploring photography. Here you’ll find projects, writing, and who I am beyond the code.
+			</p>
+		</section>
+
+		<section class="tiles" aria-label="Explore">
+			<a class="tile" href="/about">
+				<span class="tile-label">About</span>
+				<span class="tile-desc">Background, skills, and beyond the code</span>
+			</a>
+			<a class="tile" href="/experience">
+				<span class="tile-label">Experience</span>
+				<span class="tile-desc">Work, robotics, and personal projects</span>
+			</a>
+			<a class="tile" href="/blog">
+				<span class="tile-label">Blog</span>
+				<span class="tile-desc">Homelab notes, radio, and build logs</span>
+			</a>
+			<a class="tile" href="/resume">
+				<span class="tile-label">Résumé</span>
+				<span class="tile-desc">PDF overview of experience</span>
+			</a>
+		</section>
+
+		{
+			recent.length > 0 && (
+				<section class="recent" aria-labelledby="recent-heading">
+					<div class="section-head">
+						<h2 id="recent-heading">From the blog</h2>
+						<a href="/blog">All posts</a>
+					</div>
+					<ul>
+						{recent.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`}>
+									<span class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+									<span class="title">{post.data.title}</span>
+									<span class="desc muted">{post.data.description}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
+			)
+		}
+	</main>
+</BaseLayout>
+<style>
+	.hero {
+		position: relative;
+		min-height: min(72vh, 36rem);
+		display: flex;
+		align-items: flex-end;
+		overflow: hidden;
+		isolation: isolate;
+	}
+
+	.hero-media {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+	}
+
+	.hero-media :global(img) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 0;
+		animation: zoom 18s ease-out both;
+	}
+
+	.hero-scrim {
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(180deg, rgba(26, 31, 51, 0.35) 0%, rgba(26, 31, 51, 0.92) 100%),
+			linear-gradient(
+				90deg,
+				rgba(26, 31, 51, 0.75) 0%,
+				rgba(26, 31, 51, 0.25) 55%,
+				transparent 100%
+			);
+	}
+
+	.hero-copy {
+		width: var(--measure-wide);
+		max-width: calc(100% - 2 * var(--page-pad));
+		margin: 0 auto;
+		padding: 4rem var(--page-pad) 3rem;
+	}
+
+	.subtitle {
+		margin: 0 0 0.5rem 0;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--accent);
+		animation: rise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+	}
+
+	.hero h1 {
+		margin: 0 0 0.75rem 0;
+		font-size: clamp(2.75rem, 8vw, 4.5rem);
+		font-weight: 700;
+		letter-spacing: -0.035em;
+		line-height: 1.05;
+		animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both;
+	}
+
+	.lede {
+		margin: 0 0 0.5rem 0;
+		max-width: 34rem;
+		font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+		line-height: 1.45;
+		color: var(--text-muted);
+		animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+	}
+
+	.tagline {
+		margin: 0 0 1.75rem 0;
+		font-size: 1rem;
+		animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both;
+	}
+
+	.cta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1rem;
+		animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+	}
+
+	.cta-primary {
+		display: inline-flex;
+		padding: 0.7rem 1.15rem;
+		background: var(--accent);
+		color: var(--navy-deep);
+		font-weight: 700;
+		font-size: 0.95rem;
+		text-decoration: none;
+		border-radius: 2px;
+		transition:
+			background 0.15s ease,
+			transform 0.15s ease;
+	}
+
+	.cta-primary:hover {
+		background: var(--accent-strong);
+		color: var(--navy-deep);
+		transform: translateY(-1px);
+	}
+
+	.cta-secondary {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.7rem 0.35rem;
+		color: var(--text-muted);
+		text-decoration: none;
+		font-size: 0.95rem;
+		border-bottom: 1px solid transparent;
+	}
+
+	.cta-secondary:hover {
+		color: var(--accent);
+		border-bottom-color: currentColor;
+	}
+
+	.home-main {
+		padding-top: 2.5rem;
+	}
+
+	.intro {
+		margin-bottom: 2.5rem;
+		max-width: 40rem;
+	}
+
+	.tiles {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1px;
+		background: var(--border);
+		border: 1px solid var(--border);
+		margin-bottom: 3rem;
+		animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+	}
+
+	.tile {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		padding: 1.35rem 1.25rem;
+		background: rgba(36, 41, 67, 0.65);
+		text-decoration: none;
+		color: inherit;
+		transition: background 0.2s ease;
+	}
+
+	.tile:hover {
+		background: rgba(155, 241, 255, 0.08);
+	}
+
+	.tile-label {
+		font-size: 1.2rem;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		color: var(--text);
+	}
+
+	.tile:hover .tile-label {
+		color: var(--accent);
+	}
+
+	.tile-desc {
+		font-size: 0.95rem;
+		color: var(--text-muted);
+	}
+
+	.section-head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 0.85rem;
+		padding-bottom: 0.65rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.section-head h2 {
+		margin: 0;
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--text-faint);
+	}
+
+	.section-head a {
+		font-size: 0.9rem;
+		text-decoration: none;
+	}
+
+	.recent ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.recent li {
+		border-bottom: 1px solid var(--border);
+	}
+
+	.recent a {
+		display: grid;
+		gap: 0.2rem;
+		padding: 1.1rem 0;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.recent a:hover .title {
+		color: var(--accent);
+	}
+
+	.date {
+		font-size: 0.85rem;
+		color: var(--text-faint);
+	}
+
+	.title {
+		font-size: 1.2rem;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		line-height: 1.3;
+		transition: color 0.15s ease;
+	}
+
+	.desc {
+		font-size: 0.98rem;
+	}
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes zoom {
+		from {
+			transform: scale(1.06);
+		}
+		to {
+			transform: scale(1);
+		}
+	}
+
+	@media (max-width: 640px) {
+		.tiles {
+			grid-template-columns: 1fr;
+		}
+
+		.hero {
+			min-height: min(68vh, 28rem);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.subtitle,
+		.hero h1,
+		.lede,
+		.tagline,
+		.cta,
+		.tiles,
+		.hero-media :global(img) {
+			animation: none;
+		}
+
+		.cta-primary {
+			transition: none;
+		}
+	}
+</style>

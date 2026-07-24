@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+import Selfie from '../assets/images/selfie.jpg';
+import {
+	AREDN_URL,
+	CALPOLY_CSC_URL,
+	GREENSIGHT_URL,
+	LINKEDIN_URL,
+	PHOTOGRAPHY_URL,
+} from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="About Me"
+	description="Software Development Engineer II at Amazon — Cal Poly CS, GreenSight co-founder, homelab and radio."
+>
+	<main>
+		<header class="page-header">
+			<h1>About Me</h1>
+			<p class="muted">
+				Software Development Engineer II at Amazon · Former Co-founder at{' '}
+				<a href={GREENSIGHT_URL} rel="noopener noreferrer">GreenSight</a>
+				{' '}·{' '}
+				<a href={CALPOLY_CSC_URL} rel="noopener noreferrer">Cal Poly CS</a>
+			</p>
+		</header>
+
+		<div class="portrait">
+			<Image src={Selfie} alt="Chris Lawson" width={280} height={280} />
+		</div>
+
+		<div class="prose">
+			<h2>Professional Summary</h2>
+			<p>
+				At Amazon I’m an SDE II working on payment reporting and invoicing for marketplace vendors
+				across Prime Video, Amazon Music, Kindle Direct Publishing, Amazon Merch, and more — systems
+				meant to stay up and stay operable at scale.
+			</p>
+			<p>
+				Before that I co-founded{' '}
+				<a href={GREENSIGHT_URL} rel="noopener noreferrer">GreenSight Technologies</a>
+				{' '}through the Cal Poly Summer Accelerator, leading engineering on an AI-powered platform
+				for electronics resale and recycling. I’m a{' '}
+				<a href={CALPOLY_CSC_URL} rel="noopener noreferrer">Cal Poly Computer Science</a>
+				{' '}graduate based in San Luis Obispo.
+			</p>
+
+			<h2>Technical Skills</h2>
+			<h3>Languages</h3>
+			<p>TypeScript, JavaScript, Java, Python, C++, C#, Bash, SQL, HTML/CSS</p>
+			<h3>AWS</h3>
+			<p>
+				Lambda, ECS Fargate, CloudFront, WAF, IAM, VPC, ALB, NLB, Route&nbsp;53, CloudWatch, X-Ray,
+				CloudFormation, S3, and the usual core networking / compute / observability stack around
+				them
+			</p>
+			<h3>Tools &amp; platforms</h3>
+			<p>React, Angular, Node.js, Docker, Cloudflare, Linux, Git, TrueNAS, CI/CD, Splunk</p>
+			<h3>AI tools</h3>
+			<p>Cursor, Kiro, Claude Code, and formerly Cline / Roo Code (rest in peace)</p>
+			<h3>Focus areas</h3>
+			<ul>
+				<li>Infrastructure for multi-tenant applications</li>
+				<li>Full-stack microservices</li>
+				<li>Microfrontends (single-spa and friends)</li>
+				<li>Reliability and operational tooling</li>
+				<li>Networking &amp; homelab infrastructure</li>
+			</ul>
+
+			<h2>Beyond the Code</h2>
+			<p>
+				Outside of work:{' '}
+				<a href={PHOTOGRAPHY_URL} rel="noopener noreferrer">photography</a>
+				{' '}(portraits, landscapes, architecture), bouldering and rock climbing, mountain biking on
+				the Central Coast, vinyl, and learning to fly — I’m a student pilot.
+			</p>
+			<p>
+				I’m a licensed HAM operator (General class) and alumni of the{' '}
+				<a href="https://www.w6bhz.org/" rel="noopener noreferrer"
+					>Cal Poly Amateur Radio Club (W6BHZ)</a
+				>. I’ve helped expand Central Coast{' '}
+				<a href={AREDN_URL} rel="noopener noreferrer">AREDN</a>
+				{' '}mesh networking for emergency data when commercial infrastructure fails — radio as
+				community service, not just a hobby.
+			</p>
+
+			<p>
+				More detail on roles and projects: the{' '}
+				<a href="/experience">experience page</a>
+				{' '}or{' '}
+				<a href={LINKEDIN_URL} rel="noopener noreferrer">LinkedIn</a>.
+			</p>
+		</div>
+	</main>
+</BaseLayout>
+<style>
+	.page-header {
+		margin-bottom: 1.5rem;
+	}
+
+	.page-header p {
+		margin: 0;
+		max-width: 36rem;
+	}
+
+	.portrait {
+		margin: 0 0 2rem 0;
+	}
+
+	.portrait :global(img) {
+		width: 8.5rem;
+		height: 8.5rem;
+		object-fit: cover;
+		border-radius: 4px;
+		border: 1px solid var(--border);
+	}
+</style>

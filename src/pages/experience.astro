@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { AREDN_URL, GREENSIGHT_URL, LINKEDIN_URL } from '../consts';
+---
+
+<BaseLayout
+	title="Experience"
+	description="Work, startups, and selected projects — Amazon, GreenSight, and beyond."
+>
+	<main>
+		<header class="page-header">
+			<h1>Experience</h1>
+			<p class="muted">
+				Selected roles and projects. For the full ladder and dates, see{' '}
+				<a href={LINKEDIN_URL} rel="noopener noreferrer">LinkedIn</a>.
+			</p>
+		</header>
+
+		<div class="prose">
+			<h2>Professional</h2>
+
+			<h3>Amazon</h3>
+			<p>
+				<strong>Software Development Engineer II</strong> (Mar 2026 – Present) ·{' '}
+				<strong>SDE I</strong> (Sep 2024 – Mar 2026) · San Luis Obispo
+			</p>
+			<p>
+				I build payment reporting and invoicing systems for vendors on Amazon’s digital marketplaces
+				(Prime Video, Amazon Music, KDP, Merch, and more) — high-availability microservice work with
+				measurable operational impact.
+			</p>
+			<p>
+				Earlier on the Junior Developer track (<strong>Jr. Software Developer I–III</strong>, Dec
+				2021 – Jun 2024), I contributed full-stack with Java, Angular, and React, including an AWS
+				Lambda path for automated vendor invoice notifications.
+			</p>
+
+			<h3>
+				<a href={GREENSIGHT_URL} rel="noopener noreferrer">GreenSight Technologies</a>
+			</h3>
+			<p>
+				<strong>Co-founder &amp; Engineering Lead</strong> (Jan 2024 – Sep 2024), including the Cal Poly
+				Summer Accelerator.
+			</p>
+			<p>
+				Architected an AI-driven multi-tenant platform for electronics recyclers and resellers —
+				identification, pricing, and ops insights. Delivered a production-ready beta to three
+				businesses (React, React Native, Cloudflare, applied ML).
+			</p>
+
+			<h3>Cal Poly ITS</h3>
+			<p>
+				<strong>Service Desk Student Lead</strong> (Jul 2021 – Dec 2021), after starting as a Student
+				Assistant (Mar 2021 – Jun 2021). Led student staff, handled in-person troubleshooting, and represented
+				the desk in campus outage response (Slack, Confluence, JIRA).
+			</p>
+
+			<h3>Wilson Creek Communications</h3>
+			<p>
+				<strong>Network Engineering Intern</strong> (Jul 2019 – Aug 2020). Maintained rural WISP infrastructure
+				across many sites, helped migrate backends to VMware ESXi, and wrote Python tooling for AP coverage
+				planning.
+			</p>
+
+			<hr />
+
+			<h2>FRC Team 973 — The Greybots</h2>
+			<p>
+				Programmer and later mentor with{' '}
+				<a href="https://greybots.com" rel="noopener noreferrer">Team 973</a>
+				{' '}(2016–2020 as a student; mentored in college). Competition software in C++/Java, plus
+				tools like a real-time robot dashboard and a Sheets-backed attendance app. Team highlights
+				include world championship hardware and a 4th-place Worlds finish while mentoring — the
+				through-line is shipping reliable code under pressure and teaching others to do the same.
+			</p>
+
+			<hr />
+
+			<h2>Homelab &amp; side projects</h2>
+			<p>
+				Ongoing lab for networking, home automation, containers, and TrueNAS storage — the same
+				curiosity shows up in radio (W6BHZ /{' '}
+				<a href={AREDN_URL} rel="noopener noreferrer">AREDN</a>
+				) and embedded experiments like an automated coop door (Arduino + Pi). Writing about these builds
+				lives on the{' '}
+				<a href="/blog">blog</a>.
+			</p>
+		</div>
+	</main>
+</BaseLayout>
+<style>
+	.page-header {
+		margin-bottom: 1.75rem;
+	}
+
+	.page-header p {
+		margin: 0;
+		max-width: 36rem;
+	}
+</style>

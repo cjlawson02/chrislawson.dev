@@ -1,0 +1,127 @@
+---
+import FormattedDate from '../../components/FormattedDate.astro';
+import { SITE_DESCRIPTION } from '../../consts';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedPosts } from '../../lib/blog';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout title="Blog" description={SITE_DESCRIPTION}>
+	<main>
+		<header class="page-header">
+			<h1>Blog</h1>
+			<p class="muted">All posts, newest first.</p>
+		</header>
+
+		{
+			posts.length === 0 ? (
+				<p class="muted">No posts yet.</p>
+			) : (
+				<ul class="archive">
+					{posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>
+								<div class="row">
+									<span class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+									<span class="title">{post.data.title}</span>
+								</div>
+								<p class="desc muted">{post.data.description}</p>
+								{post.data.tags?.length > 0 && (
+									<ul class="tags">
+										{post.data.tags.map((tag) => (
+											<li>
+												<span class="tag">{tag}</span>
+											</li>
+										))}
+									</ul>
+								)}
+							</a>
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</main>
+</BaseLayout>
+<style>
+	.page-header {
+		margin-bottom: 2rem;
+	}
+
+	.page-header h1 {
+		margin-bottom: 0.35rem;
+	}
+
+	.page-header p {
+		margin: 0;
+	}
+
+	.archive {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.archive li {
+		border-top: 1px solid var(--border);
+	}
+
+	.archive li:last-child {
+		border-bottom: 1px solid var(--border);
+	}
+
+	.archive a {
+		display: block;
+		padding: 1.25rem 0;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.archive a:hover .title {
+		color: var(--accent);
+	}
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.5rem 1rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.date {
+		flex: 0 0 6.5rem;
+		font-size: 0.9rem;
+		color: var(--text-faint);
+	}
+
+	.title {
+		font-size: 1.25rem;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		transition: color 0.15s ease;
+	}
+
+	.desc {
+		margin: 0 0 0.65rem 0;
+		font-size: 0.98rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	@media (max-width: 560px) {
+		.date {
+			flex-basis: 100%;
+		}
+	}
+</style>

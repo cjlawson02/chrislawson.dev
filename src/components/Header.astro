@@ -1,0 +1,94 @@
+---
+import { PHOTOGRAPHY_URL, SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav>
+		<a class="brand site-brand" href="/">{SITE_TITLE}</a>
+		<div class="links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/experience">Experience</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<a class="external" href={PHOTOGRAPHY_URL} rel="noopener noreferrer">Photography ↗</a>
+			<HeaderLink href="/resume">Résumé</HeaderLink>
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		backdrop-filter: blur(12px);
+		background: rgba(36, 41, 67, 0.85);
+		border-bottom: 1px solid var(--border);
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		width: var(--measure-wide);
+		max-width: calc(100% - 2 * var(--page-pad));
+		margin: 0 auto;
+		padding: 0.9rem 0;
+	}
+
+	.brand {
+		font-size: 1.15rem;
+		color: var(--text);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.brand:hover {
+		color: var(--accent);
+	}
+
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.1rem;
+	}
+
+	.links :global(a) {
+		padding: 0.35rem 0.5rem;
+		color: var(--text-muted);
+		text-decoration: none;
+		font-size: 0.92rem;
+		border-bottom: 2px solid transparent;
+	}
+
+	.links :global(a:hover) {
+		color: var(--text);
+	}
+
+	.links :global(a.active) {
+		color: var(--accent);
+		font-weight: 600;
+		border-bottom-color: var(--accent);
+		text-decoration: none;
+	}
+
+	@media (max-width: 720px) {
+		nav {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.45rem;
+		}
+
+		.links {
+			justify-content: flex-start;
+		}
+
+		.links :global(a) {
+			padding: 0.3rem 0.4rem;
+			font-size: 0.88rem;
+		}
+	}
+</style>
