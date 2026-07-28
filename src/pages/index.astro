@@ -57,7 +57,7 @@ const jsonLd = {
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} image={BannerImage} jsonLd={jsonLd}>
 	<section class="hero">
 		<div class="hero-media" aria-hidden="true">
-			<Image src={BannerImage} alt="" width={1920} height={1080} densities={[1, 1.5, 2]} />
+			<Image src={BannerImage} alt="" width={1920} densities={[1, 1.5, 2]} />
 			<div class="hero-scrim"></div>
 		</div>
 		<div class="hero-copy">
@@ -135,7 +135,7 @@ const jsonLd = {
 <style>
 	.hero {
 		position: relative;
-		min-height: min(72vh, 36rem);
+		min-height: clamp(22rem, 10rem + 28vw, 44rem);
 		display: flex;
 		align-items: flex-end;
 		overflow: hidden;
@@ -149,11 +149,22 @@ const jsonLd = {
 	}
 
 	.hero-media :global(img) {
+		--hero-scale: 1;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: center top;
+		transform-origin: center top;
 		border-radius: 0;
 		animation: zoom 18s ease-out both;
+	}
+
+	@media (min-width: 900px) {
+		.hero-media :global(img) {
+			--hero-scale: 1.03;
+			object-position: center 16%;
+			transform-origin: center 16%;
+		}
 	}
 
 	.hero-scrim {
@@ -378,10 +389,10 @@ const jsonLd = {
 
 	@keyframes zoom {
 		from {
-			transform: scale(1.06);
+			transform: scale(calc(var(--hero-scale) * 1.06));
 		}
 		to {
-			transform: scale(1);
+			transform: scale(var(--hero-scale));
 		}
 	}
 
@@ -390,8 +401,9 @@ const jsonLd = {
 			grid-template-columns: 1fr;
 		}
 
-		.hero {
-			min-height: min(68vh, 28rem);
+		.hero-copy {
+			padding-top: 2.75rem;
+			padding-bottom: 2.25rem;
 		}
 	}
 
@@ -404,6 +416,10 @@ const jsonLd = {
 		.tiles,
 		.hero-media :global(img) {
 			animation: none;
+		}
+
+		.hero-media :global(img) {
+			transform: scale(var(--hero-scale));
 		}
 
 		.cta-primary {

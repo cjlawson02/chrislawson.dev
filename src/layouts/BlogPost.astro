@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
 import BaseLayout from './BaseLayout.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -10,7 +11,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
-	<main>
+	<main class="wide">
 		<article>
 			<header class="post-header">
 				<div class="meta">
@@ -39,7 +40,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro
 			{
 				heroImage && (
 					<div class="hero">
-						<Image width={1020} height={510} src={heroImage} alt="" />
+						<Image width={1020} height={510} src={heroImage} alt="" data-zoom-src={heroImage.src} />
 					</div>
 				)
 			}
@@ -48,6 +49,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro
 			</div>
 		</article>
 	</main>
+	<ImageLightbox />
 </BaseLayout>
 <style>
 	.post-header {
@@ -87,6 +89,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro
 		height: auto;
 		border-radius: 6px;
 		border: 1px solid var(--border);
+		cursor: zoom-in;
 	}
 
 	.prose {

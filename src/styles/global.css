@@ -149,6 +149,20 @@ p {
 
 .prose img {
 	margin: 1.5em 0;
+	cursor: zoom-in;
+}
+
+/* Image captions: italic line immediately after an image paragraph */
+.prose p:has(> img) {
+	margin-bottom: 0.25em;
+}
+
+.prose p:has(> img) img {
+	margin-bottom: 0;
+}
+
+.prose p:has(> img) + p {
+	margin-top: 0;
 }
 
 textarea,
