@@ -60,6 +60,15 @@ jobs:
             echo 'Sitemap still includes /projects' >&2
             exit 1
           fi
+          while IFS= read -r path; do
+            if [ ! -f "dist/client${path}" ]; then
+              echo "og:image target missing in dist: ${path}" >&2
+              exit 1
+            fi
+          done < <(
+            grep -rho 'property="og:image" content="https://chrislawson.dev[^"]*"' dist/client --include='*.html' \
+              | sed 's/.*content="https:\/\/chrislawson.dev//; s/"$//'
+          )
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v4

@@ -1,16 +1,50 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import ImageLightbox from '../components/ImageLightbox.astro';
+import { SITE_TITLE } from '../consts';
 import BaseLayout from './BaseLayout.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro.props;
+
+const postUrl = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageAsset = heroImage
+	? await getImage({ src: heroImage, width: 1200, height: 630, format: 'jpg' })
+	: null;
+
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: title,
+	description,
+	datePublished: pubDate.toISOString(),
+	dateModified: (updatedDate ?? pubDate).toISOString(),
+	author: {
+		'@type': 'Person',
+		name: SITE_TITLE,
+		url: Astro.site!.href,
+	},
+	mainEntityOfPage: {
+		'@type': 'WebPage',
+		'@id': postUrl,
+	},
+	...(ogImageAsset && { image: new URL(ogImageAsset.src, Astro.site).href }),
+};
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}>
+<BaseLayout
+	title={title}
+	description={description}
+	image={heroImage}
+	imageAlt={title}
+	ogType="article"
+	publishedTime={pubDate}
+	modifiedTime={updatedDate ?? pubDate}
+	jsonLd={jsonLd}
+>
 	<main class="wide">
 		<article>
 			<header class="post-header">
@@ -40,7 +74,13 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro
 			{
 				heroImage && (
 					<div class="hero">
-						<Image width={1020} height={510} src={heroImage} alt="" data-zoom-src={heroImage.src} />
+						<Image
+							width={1020}
+							height={510}
+							src={heroImage}
+							alt={title}
+							data-zoom-src={heroImage.src}
+						/>
 					</div>
 				)
 			}
