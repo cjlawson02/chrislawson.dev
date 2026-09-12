@@ -70,25 +70,19 @@ const ogImage = ogImageAsset
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-{
-	ogImageAsset && (
-		<>
-			<meta property="og:image:width" content={String(ogImageAsset.attributes.width)} />
-			<meta property="og:image:height" content={String(ogImageAsset.attributes.height)} />
-		</>
-	)
-}
+{ogImageAsset && (
+	<>
+		<meta property="og:image:width" content={String(ogImageAsset.attributes.width)} />
+		<meta property="og:image:height" content={String(ogImageAsset.attributes.height)} />
+	</>
+)}
 {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
-{
-	ogType === 'article' && publishedTime && (
-		<meta property="article:published_time" content={publishedTime.toISOString()} />
-	)
-}
-{
-	ogType === 'article' && modifiedTime && (
-		<meta property="article:modified_time" content={modifiedTime.toISOString()} />
-	)
-}
+{ogType === 'article' && publishedTime && (
+	<meta property="article:published_time" content={publishedTime.toISOString()} />
+)}
+{ogType === 'article' && modifiedTime && (
+	<meta property="article:modified_time" content={modifiedTime.toISOString()} />
+)}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -96,4 +90,4 @@ const ogImage = ogImageAsset
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 
-{jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+{jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>}

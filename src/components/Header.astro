@@ -5,13 +5,17 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<a class="brand site-brand" href="/">{SITE_TITLE}</a>
+		<a class="brand site-brand" href="/">
+			{SITE_TITLE}
+		</a>
 		<div class="links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 			<HeaderLink href="/experience">Experience</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
-			<a class="external" href={PHOTOGRAPHY_URL} rel="noopener noreferrer">Photography ↗</a>
+			<a class="external" href={PHOTOGRAPHY_URL} rel="noopener noreferrer">
+				Photography ↗
+			</a>
 			<HeaderLink href="/resume">Résumé</HeaderLink>
 		</div>
 	</nav>

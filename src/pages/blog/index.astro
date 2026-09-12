@@ -14,36 +14,34 @@ const posts = await getPublishedPosts();
 			<p class="muted">All posts, newest first.</p>
 		</header>
 
-		{
-			posts.length === 0 ? (
-				<p class="muted">No posts yet.</p>
-			) : (
-				<ul class="archive">
-					{posts.map((post) => (
-						<li>
-							<a href={`/blog/${post.id}/`}>
-								<div class="row">
-									<span class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</span>
-									<span class="title">{post.data.title}</span>
-								</div>
-								<p class="desc muted">{post.data.description}</p>
-								{post.data.tags?.length > 0 && (
-									<ul class="tags">
-										{post.data.tags.map((tag) => (
-											<li>
-												<span class="tag">{tag}</span>
-											</li>
-										))}
-									</ul>
-								)}
-							</a>
-						</li>
-					))}
-				</ul>
-			)
-		}
+		{posts.length === 0 ? (
+			<p class="muted">No posts yet.</p>
+		) : (
+			<ul class="archive">
+				{posts.map((post) => (
+					<li>
+						<a href={`/blog/${post.id}/`}>
+							<div class="row">
+								<span class="date">
+									<FormattedDate date={post.data.pubDate} />
+								</span>
+								<span class="title">{post.data.title}</span>
+							</div>
+							<p class="desc muted">{post.data.description}</p>
+							{post.data.tags?.length > 0 && (
+								<ul class="tags">
+									{post.data.tags.map((tag) => (
+										<li>
+											<span class="tag">{tag}</span>
+										</li>
+									))}
+								</ul>
+							)}
+						</a>
+					</li>
+				))}
+			</ul>
+		)}
 	</main>
 </BaseLayout>
 <style>

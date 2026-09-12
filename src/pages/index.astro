@@ -66,9 +66,15 @@ const jsonLd = {
 			<p class="lede">{SITE_DESCRIPTION}</p>
 			<p class="tagline muted">{SITE_TAGLINE}</p>
 			<div class="cta">
-				<a class="cta-primary" href="/about">About me</a>
-				<a class="cta-secondary" href="/blog">Blog</a>
-				<a class="cta-secondary" href="/experience">Experience</a>
+				<a class="cta-primary" href="/about">
+					About me
+				</a>
+				<a class="cta-secondary" href="/blog">
+					Blog
+				</a>
+				<a class="cta-secondary" href="/experience">
+					Experience
+				</a>
 			</div>
 		</div>
 	</section>
@@ -78,9 +84,10 @@ const jsonLd = {
 			<p>
 				I’m Chris Lawson, a Software Development Engineer II at Amazon SLO focused on building
 				innovative solutions with measurable impact. As a{' '}
-				<a href={CALPOLY_CSC_URL} rel="noopener noreferrer">Cal Poly Computer Science</a>
-				{' '}graduate, I specialize in transforming complex challenges into efficient, elegant
-				solutions.
+				<a href={CALPOLY_CSC_URL} rel="noopener noreferrer">
+					Cal Poly Computer Science
+				</a>{' '}
+				graduate, I specialize in transforming complex challenges into efficient, elegant solutions.
 			</p>
 			<p>
 				My work spans from developing payment reporting systems at Amazon to building my own homelab
@@ -107,29 +114,27 @@ const jsonLd = {
 			</a>
 		</section>
 
-		{
-			recent.length > 0 && (
-				<section class="recent" aria-labelledby="recent-heading">
-					<div class="section-head">
-						<h2 id="recent-heading">From the blog</h2>
-						<a href="/blog">All posts</a>
-					</div>
-					<ul>
-						{recent.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<span class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</span>
-									<span class="title">{post.data.title}</span>
-									<span class="desc muted">{post.data.description}</span>
-								</a>
-							</li>
-						))}
-					</ul>
-				</section>
-			)
-		}
+		{recent.length > 0 && (
+			<section class="recent" aria-labelledby="recent-heading">
+				<div class="section-head">
+					<h2 id="recent-heading">From the blog</h2>
+					<a href="/blog">All posts</a>
+				</div>
+				<ul>
+					{recent.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>
+								<span class="date">
+									<FormattedDate date={post.data.pubDate} />
+								</span>
+								<span class="title">{post.data.title}</span>
+								<span class="desc muted">{post.data.description}</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		)}
 	</main>
 </BaseLayout>
 <style>
