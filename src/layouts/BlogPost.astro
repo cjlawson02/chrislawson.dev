@@ -14,6 +14,9 @@ const postUrl = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageAsset = heroImage
 	? await getImage({ src: heroImage, width: 1200, height: 630, format: 'jpg' })
 	: null;
+const zoomImageAsset = heroImage
+	? await getImage({ src: heroImage, width: heroImage.width, format: 'webp' })
+	: null;
 
 const jsonLd = {
 	'@context': 'https://schema.org',
@@ -74,7 +77,9 @@ const jsonLd = {
 						height={510}
 						src={heroImage}
 						alt={title}
-						data-zoom-src={heroImage.src}
+						data-zoom-src={zoomImageAsset?.src}
+						data-zoom-width={zoomImageAsset?.attributes.width}
+						data-zoom-height={zoomImageAsset?.attributes.height}
 					/>
 				</div>
 			)}

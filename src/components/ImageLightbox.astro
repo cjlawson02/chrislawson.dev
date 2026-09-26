@@ -1,113 +1,92 @@
-<dialog class="image-lightbox" aria-label="Enlarged image">
-	<button type="button" class="lightbox-close" aria-label="Close">
-		×
-	</button>
-	<img class="lightbox-image" alt="" />
-</dialog>
-
 <script>
-	function initImageLightbox() {
-		const dialog = document.querySelector('.image-lightbox');
-		const lightboxImage = dialog?.querySelector('.lightbox-image');
-		const closeButton = dialog?.querySelector('.lightbox-close');
-		if (!(dialog instanceof HTMLDialogElement) || !(lightboxImage instanceof HTMLImageElement))
-			return;
+	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import type { SlideData } from 'photoswipe';
+	import 'photoswipe/style.css';
 
-		const article = dialog.closest('body')?.querySelector('article');
+	const FALLBACK_SIZE = { width: 1600, height: 1200 };
+
+	function zoomSrc(image: HTMLImageElement): string {
+		return image.dataset.zoomSrc || image.currentSrc || image.src;
+	}
+
+	async function zoomSize(image: HTMLImageElement): Promise<{ width: number; height: number }> {
+		const width = Number(image.dataset.zoomWidth);
+		const height = Number(image.dataset.zoomHeight);
+		if (width && height) return { width, height };
+
+		if (!image.dataset.zoomSrc && image.complete && image.naturalWidth) {
+			return { width: image.naturalWidth, height: image.naturalHeight };
+		}
+
+		const probe = new Image();
+		probe.src = zoomSrc(image);
+		await probe.decode().catch(() => undefined);
+		return probe.naturalWidth
+			? { width: probe.naturalWidth, height: probe.naturalHeight }
+			: FALLBACK_SIZE;
+	}
+
+	function initImageLightbox() {
+		const article = document.querySelector('article');
 		if (!article) return;
 
-		for (const image of article.querySelectorAll('img')) {
-			if (image.classList.contains('lightbox-image')) continue;
+		const images = [...article.querySelectorAll('img')];
+		if (images.length === 0) return;
 
+		const lightbox = new PhotoSwipeLightbox({
+			pswpModule: () => import('photoswipe'),
+			bgOpacity: 0.92,
+			showHideAnimationType: 'fade',
+			loop: true,
+		});
+		lightbox.init();
+
+		async function open(index: number) {
+			const dataSource: SlideData[] = await Promise.all(
+				images.map(async (image) => ({
+					src: zoomSrc(image),
+					alt: image.alt,
+					element: image,
+					...(await zoomSize(image)),
+				})),
+			);
+			void lightbox.loadAndOpen(index, dataSource);
+		}
+
+		images.forEach((image, index) => {
 			image.classList.add('zoomable-image');
 			image.tabIndex = 0;
 			image.setAttribute('role', 'button');
 			image.setAttribute('aria-label', image.alt ? `Zoom image: ${image.alt}` : 'Zoom image');
 
-			image.addEventListener('click', () => {
-				const zoomSrc =
-					image.dataset.zoomSrc ||
-					image.currentSrc ||
-					image.getAttribute('srcset')?.split(/,\s+/).pop()?.split(/\s+/)[0] ||
-					image.src;
-
-				lightboxImage.src = zoomSrc;
-				lightboxImage.alt = image.alt;
-				dialog.showModal();
-			});
-
+			image.addEventListener('click', () => void open(index));
 			image.addEventListener('keydown', (event) => {
 				if (event.key === 'Enter' || event.key === ' ') {
 					event.preventDefault();
-					image.click();
+					void open(index);
 				}
 			});
-		}
-
-		closeButton?.addEventListener('click', () => dialog.close());
-
-		dialog.addEventListener('click', (event) => {
-			if (event.target === dialog) dialog.close();
-		});
-
-		dialog.addEventListener('close', () => {
-			lightboxImage.removeAttribute('src');
-			lightboxImage.alt = '';
 		});
 	}
 
 	initImageLightbox();
 </script>
 
-<style>
-	:global(.zoomable-image) {
+<style is:global>
+	.zoomable-image {
 		cursor: zoom-in;
 	}
 
-	.image-lightbox {
-		width: min(96vw, 120rem);
-		max-width: none;
-		padding: 0;
-		border: none;
-		background: transparent;
-		overflow: visible;
+	.pswp {
+		--pswp-bg: #0a0c16;
+		--pswp-icon-color: var(--text);
+		--pswp-icon-color-secondary: var(--navy-deep);
+		--pswp-icon-stroke-color: var(--navy-deep);
+		--pswp-error-text-color: var(--text-muted);
 	}
 
-	.image-lightbox::backdrop {
-		background: rgba(10, 12, 22, 0.92);
-		backdrop-filter: blur(4px);
-	}
-
-	.lightbox-close {
-		position: fixed;
-		top: 1rem;
-		right: 1rem;
-		z-index: 2;
-		width: 2.5rem;
-		height: 2.5rem;
-		border: 1px solid var(--border);
-		border-radius: 999px;
-		background: rgba(36, 41, 67, 0.95);
-		color: var(--text);
-		font-size: 1.5rem;
-		line-height: 1;
-		cursor: pointer;
-	}
-
-	.lightbox-close:hover {
-		border-color: var(--accent);
-		color: var(--accent);
-	}
-
-	.lightbox-image {
-		display: block;
-		width: auto;
-		height: auto;
-		max-width: 96vw;
-		max-height: 92vh;
-		margin: 0 auto;
-		border-radius: 6px;
-		border: 1px solid var(--border);
-		cursor: zoom-out;
+	.pswp__button:hover .pswp__icn,
+	.pswp__button:focus-visible .pswp__icn {
+		fill: var(--accent);
 	}
 </style>

@@ -1,25 +1,26 @@
-name: Deploy
+name: CI/CD
 
 on:
   push:
     branches:
       - master
       - main
+  pull_request:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-production
-  cancel-in-progress: false
+  group: ci-cd-${{ github.ref }}
+  # Never cancel an in-flight production deploy; superseded PR runs are safe to drop.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
 
 jobs:
-  deploy:
-    name: Build & deploy to Cloudflare Workers
+  check:
+    name: Check & build
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    environment: production
-    permissions:
-      contents: read
-      deployments: write
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -52,6 +53,7 @@ jobs:
           test -f dist/client/404.html
           test -f dist/client/robots.txt
           test -f dist/client/pdfs/WebsiteResume.pdf
+          grep -q 'Content-Security-Policy' dist/client/_headers
           if grep -R '/_image' dist/client --include='*.html' >/dev/null; then
             echo 'Found runtime /_image URLs in HTML; use imageService compile/passthrough' >&2
             exit 1
@@ -69,6 +71,44 @@ jobs:
             grep -rho 'property="og:image" content="https://chrislawson.dev[^"]*"' dist/client --include='*.html' \
               | sed 's/.*content="https:\/\/chrislawson.dev//; s/"$//'
           )
+          while IFS= read -r path; do
+            if [ ! -f "dist/client${path}" ]; then
+              echo "data-zoom-src target missing in dist: ${path}" >&2
+              exit 1
+            fi
+          done < <(
+            grep -rho 'data-zoom-src="/[^"]*"' dist/client --include='*.html' \
+              | sed 's/^data-zoom-src="//; s/"$//'
+          )
+
+      - name: Validate Workers bundle (dry-run)
+        run: npx wrangler deploy --dry-run
+
+  deploy:
+    name: Deploy to Cloudflare Workers
+    needs: check
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: production
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v4
