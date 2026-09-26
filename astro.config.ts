@@ -13,7 +13,7 @@ export default defineConfig({
 	],
 	redirects: {
 		'/projects': '/experience',
-		'/photography': 'https://www.lawsonphotography.me/',
+		'/photography': 'https://photography.chrislawson.dev/',
 	},
 	fonts: [
 		{
