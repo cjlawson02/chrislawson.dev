@@ -1,0 +1,19 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"printWidth": 100,
+	"singleQuote": true,
+	"useTabs": true,
+	"trailingComma": "all",
+	"astro": true,
+	"ignorePatterns": [
+		"dist/**",
+		"node_modules/**",
+		".astro/**",
+		".wrangler/**",
+		"package-lock.json",
+		"worker-configuration.d.ts",
+		"public/**/*.pdf",
+		"**/*.min.js",
+		"**/*.min.css"
+	]
+}

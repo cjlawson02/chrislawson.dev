@@ -9,13 +9,16 @@ npm install
 npm run dev
 ```
 
-Requires Node `>=22.12.0`. Prefer `astro dev --background` in agent workflows.
+Requires Node `>=24`. Prefer `astro dev --background` in agent workflows.
+
+Lint/format: `oxlint` / `oxfmt` (`npm run lint`, `npm run format`).
 
 ## Build & deploy
 
 ```bash
 npm run build
 npm run check    # astro check
+npm run validate # check + lint + format:check
 npm run deploy   # astro build && wrangler deploy
 ```
 

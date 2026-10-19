@@ -1,12 +1,31 @@
+# Agent Guidance (chrislawson.dev)
+
+Personal site — Astro + Cloudflare Workers.
+
+## Stack
+
+- **Astro** with `@astrojs/cloudflare` adapter
+- **Lint/format:** `oxlint` / `oxfmt` (`.astro` via `astro: true`, oxc#27386). VS Code: `oxc.oxc-vscode`
+- Deploy: Wrangler static assets / Workers (see `wrangler.jsonc`, `.github/workflows/deploy.yml`)
+
 ## Development
 
-When starting the dev server, use background mode:
-
+```bash
+npm install
+npm run dev
+# or: astro dev --background
 ```
-astro dev --background
-```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+Manage background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+
+| Script                 | Purpose                     |
+| ---------------------- | --------------------------- |
+| `npm run lint`         | oxlint                      |
+| `npm run format`       | oxfmt --write               |
+| `npm run format:check` | oxfmt --check               |
+| `npm run check`        | astro check                 |
+| `npm run validate`     | check + lint + format:check |
+| `npm run build`        | astro build                 |
 
 ## Documentation
 
