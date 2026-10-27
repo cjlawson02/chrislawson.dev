@@ -25,7 +25,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.10",
-		"oxfmt": "^0.74.0",
+		"oxfmt": "^0.75.0",
 		"oxlint": "^1.88.0",
 		"typescript": "npm:@typescript/typescript6@^6.0.2",
 		"wrangler": "^4.151.1"
